@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
         {
             saltosRestantes = 2;
         }
+
     }
 
     void Jump()
