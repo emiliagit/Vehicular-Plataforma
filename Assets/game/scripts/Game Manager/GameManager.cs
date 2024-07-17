@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     }
     public void MenuPrincipal()
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void PlayButton()
