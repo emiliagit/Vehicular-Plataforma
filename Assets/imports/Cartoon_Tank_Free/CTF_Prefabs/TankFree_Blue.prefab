@@ -217,7 +217,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4339861350199996378}
@@ -339,8 +339,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   player: {fileID: 0}
-  detectionRange: 30
-  stopDistance: 15
+  detectionRange: 35
+  stopDistance: 10
   moveSpeed: 3
   rotationSpeed: 3
 --- !u!114 &7002508292536994865
@@ -373,9 +373,9 @@ MonoBehaviour:
   aim: {fileID: 4189710058130474966}
   projectilePrefab: {fileID: 9093341398570273206, guid: 9b56964c0347a624a9fea4341f3f58bc, type: 3}
   projectileSpawnPoint: {fileID: 1890103464711057436}
-  fireRate: 1
-  bulletForce: 7
-  detectionRadius: 12
+  fireRate: 1.5
+  bulletForce: 15
+  detectionRadius: 30
 --- !u!1 &1397629665669033979
 GameObject:
   m_ObjectHideFlags: 0
