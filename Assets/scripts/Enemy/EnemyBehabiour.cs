@@ -36,7 +36,7 @@ public class EnemyBehabiour : MonoBehaviour
             // Si el jugador está dentro del radio de detección, disparar proyectiles
             if (Time.time >= nextFireTime)
             {
-               // AttackPlayer();
+                AttackPlayer();
                 nextFireTime = Time.time + 1f / fireRate; // Actualizar el tiempo para el próximo disparo
             }
         }
