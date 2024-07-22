@@ -35,10 +35,12 @@ public class TurretController : MonoBehaviour
 
         if (Input.GetMouseButton(4))
         {
+            Debug.Log("rotando 4");
             transform.Rotate(Vector3.up, -spinSpeed * Time.deltaTime);
         }
-        if (Input.GetMouseButton(5))
+        if (Input.GetMouseButton(3))
         {
+            Debug.Log("rotando 5");
             transform.Rotate(Vector3.up, spinSpeed * Time.deltaTime);
         }
     }
