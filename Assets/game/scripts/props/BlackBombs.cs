@@ -17,6 +17,9 @@ public class BlackBombs : MonoBehaviour
         if(other.gameObject.TryGetComponent(out PlayerHealth player))
         {
             player.RecibirDanio(5);
+            GameObject fire = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(fire, 1f);
+            Destroy(gameObject);
         }
     }
 }
