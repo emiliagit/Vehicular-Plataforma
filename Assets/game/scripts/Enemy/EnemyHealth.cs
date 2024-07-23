@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public float currentHealth;
+    public float enemyHealth;
+
+   
+    private GameObject FireEfect2;
+
+    public GameObject damageEfectEnemies;
+
+    public Transform damageEfectPoint2;
+
+   
+    bool fireEffectSpawned2 = false;
 
 
     public GameObject deathEffect;
@@ -17,15 +27,22 @@ public class EnemyHealth : MonoBehaviour
 
     private void Update()
     {
-        if (currentHealth <= 0)
+       
+        if (enemyHealth <= 30 && !fireEffectSpawned2)
+        {
+            DamageEnemies();
+            fireEffectSpawned2 = true;
+        }
+        if (enemyHealth <= 0)
         {
             Die();
         }
+
     }
     public void TakeDamage(float damage)
     {
 
-        currentHealth -= damage;
+        enemyHealth -= damage;
 
     }
 
@@ -35,9 +52,18 @@ public class EnemyHealth : MonoBehaviour
         if (deathEffect != null)
         {
             Instantiate(deathEffect, transform.position, transform.rotation);
-            Debug.Log("animacion muerte instanciada");
+          
         }
 
         Destroy(gameObject);
+        //Destroy(FireEfect1);
+        Destroy(FireEfect2);
+    }
+
+   
+
+    private void DamageEnemies()
+    {
+        FireEfect2 = Instantiate(damageEfectEnemies, damageEfectPoint2.position, damageEfectPoint2.rotation);
     }
 }

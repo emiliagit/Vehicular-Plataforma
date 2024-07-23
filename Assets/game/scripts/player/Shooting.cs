@@ -26,7 +26,7 @@ public class Shooting : MonoBehaviour
     }
     protected virtual void ShootProjectile()
     {
-        //tiempoUltimoDisparo = Time.time;
+        tiempoUltimoDisparo = Time.time;
 
         // Instancia la bala en el punto de disparo y con la rotación del punto de disparo
         GameObject bullet = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);

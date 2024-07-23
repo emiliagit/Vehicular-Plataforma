@@ -267,6 +267,37 @@ MonoBehaviour:
   player: {fileID: 0}
   turret: {fileID: 8446161688824157191}
   rotationSpeed: 5
+--- !u!1 &3134464899775000596
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5248806453243938261}
+  m_Layer: 0
+  m_Name: DamagePoint1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5248806453243938261
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3134464899775000596}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.429, y: 0.502, z: 0.328}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5200009900654678498}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &3557994909985388415
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,6 +381,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &4112249879220352540
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5385296520827146888}
+  m_Layer: 0
+  m_Name: DamagePoint2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5385296520827146888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4112249879220352540}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.712, y: 0.246, z: -0.641}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5200009900654678498}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &4284468541364940035
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,8 +540,8 @@ GameObject:
   - component: {fileID: 7463451351510692707}
   - component: {fileID: 4194314760576837781}
   - component: {fileID: 2287702552134552294}
-  - component: {fileID: 2306664100217710290}
   - component: {fileID: 5091867474904824692}
+  - component: {fileID: -4128439576967272168}
   m_Layer: 0
   m_Name: TankFree_Blue
   m_TagString: Enemy
@@ -495,7 +557,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6281262352993034486}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.538, z: 229.3}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
@@ -505,6 +567,8 @@ Transform:
   - {fileID: 3170736178011361690}
   - {fileID: 8555377819556287662}
   - {fileID: 8274742653386025668}
+  - {fileID: 5248806453243938261}
+  - {fileID: 5385296520827146888}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2783065901884621572
@@ -623,20 +687,6 @@ MonoBehaviour:
   stopDistance: 10
   moveSpeed: 3
   rotationSpeed: 3
---- !u!114 &2306664100217710290
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6281262352993034486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3218dbde8ee0bb64b964f0b31540f432, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 200
-  deathEffect: {fileID: 0}
 --- !u!114 &5091867474904824692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -656,6 +706,23 @@ MonoBehaviour:
   fireRate: 1.5
   bulletForce: 15
   detectionRadius: 30
+--- !u!114 &-4128439576967272168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6281262352993034486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fcc2e37dc312404583dbcc1e8352d01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 200
+  damageEfectEnemies: {fileID: 8764043878647920493, guid: c4ed38c72957f2241ad144a1614956d9, type: 3}
+  damageEfectPoint1: {fileID: 5248806453243938261}
+  damageEfectPoint2: {fileID: 5385296520827146888}
+  deathEffect: {fileID: 8194992990867289339, guid: 99bc28c0d45f51c4fbac01080b73edc7, type: 3}
 --- !u!1 &7480299040842963114
 GameObject:
   m_ObjectHideFlags: 0

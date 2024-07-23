@@ -23,6 +23,11 @@ public class FirePlayer : MonoBehaviour
             enemy.TakeDamage(10);
             Debug.Log("daño de 10 a enemigo");
         }
+        if (other.gameObject.TryGetComponent(out BossHEalth boss))
+        {
+            boss.TakeDamage(10);
+            Debug.Log("daño de 10 a boss");
+        }
 
     }
 }
