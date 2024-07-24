@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     //recovery
     private Quaternion originalRotation;
     private bool isResettingRotation = false;
-    private float recoverSpeed = 1.0f;
+    private float recoverSpeed = 3.0f;
 
 
     // Start is called before the first frame update
