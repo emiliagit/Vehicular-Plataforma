@@ -11,8 +11,7 @@ public class PlayerHealth : MonoBehaviour
     
     public float hp;
 
-  
-
+    private float maxHealth = 100;
 
     private void Start()
     {
@@ -28,6 +27,10 @@ public class PlayerHealth : MonoBehaviour
             SceneManager.LoadScene("GameOver");
 
         }
+        if (hp > maxHealth)
+        {
+            hp = maxHealth;
+        }
 
 
         UpdateHealthUI();
@@ -38,6 +41,11 @@ public class PlayerHealth : MonoBehaviour
     {
         hp -= dmg;
         UpdateHealthUI();
+    }
+
+    public void RecibirVida(float vida)
+    {
+        hp += vida;
     }
 
 

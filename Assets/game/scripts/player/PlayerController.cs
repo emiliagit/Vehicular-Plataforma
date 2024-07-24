@@ -42,11 +42,19 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         originalRotation = transform.rotation;
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+
         moveInput = Input.GetAxis("Vertical");
         rotationInput = Input.GetAxis("Horizontal");
 

@@ -44,6 +44,7 @@ public class VictoryCondition : MonoBehaviour
         if (keys.Length == 0 && playerHealth.hp > 0)
         {
             SceneManager.LoadScene("Victory");
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public void MenuPrincipal()
     {
         SceneManager.LoadScene("MainMenu");
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void PlayButton()
