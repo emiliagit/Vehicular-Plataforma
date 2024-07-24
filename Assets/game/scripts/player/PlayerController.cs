@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+    //movimiento
     public float moveSpeed = 5.0f;
     public float rotationSpeed = 120.0f;
     public GameObject[] leftWheels;
@@ -15,18 +17,31 @@ public class PlayerController : MonoBehaviour
     private float moveInput;
     private float rotationInput;
 
-    private bool grounded;
+    private float recoveryCooldown;
+
+    //salto
     private int saltosRestantes = 2;
     public float fuerzaSalto = 5f;
     public Transform groundCheck;
     public float groundCheckRadius = 0.2f;
+    private bool grounded;
+
+    //layer
     public LayerMask groundLayer;
+
+
+    //recovery
+    private Quaternion originalRotation;
+    private bool isResettingRotation = false;
+    private float recoverSpeed = 1.0f;
 
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        originalRotation = transform.rotation;
     }
 
     // Update is called once per frame
@@ -41,6 +56,16 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            isResettingRotation = true;
+        }
+
+        if (isResettingRotation)
+        {
+            ResetRotation();
+        }
+
 
     }
 
@@ -63,6 +88,7 @@ public class PlayerController : MonoBehaviour
         saltosRestantes--;
     }
 
+    
     void MoveTankObj(float input)
     {
         Vector3 moveDirection = transform.forward * input * moveSpeed * Time.fixedDeltaTime;
@@ -102,6 +128,18 @@ public class PlayerController : MonoBehaviour
                 else
                     wheel.transform.Rotate(-wheelTurnRotation, 0f, 0f);
             }
+        }
+    }
+
+    void ResetRotation()
+    {
+        transform.rotation = Quaternion.Lerp(transform.rotation, originalRotation, Time.deltaTime * recoverSpeed);
+
+        // Comprueba si la rotación está cerca de la original y detiene la interpolación
+        if (Quaternion.Angle(transform.rotation, originalRotation) < 0.1f)
+        {
+            transform.rotation = originalRotation;
+            isResettingRotation = false;
         }
     }
 }

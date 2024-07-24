@@ -8,6 +8,8 @@ TagManager:
   - FxTemporaire
   - Enemy
   - ProyectilePlayer
+  - Key
+  - finish
   layers:
   - Default
   - TransparentFX

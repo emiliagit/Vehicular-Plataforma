@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject impact;
 
-    // Update is called once per frame
-    void Update()
+
+    private void OnTriggerEnter(Collider other)
     {
-        
+        if(other.gameObject.CompareTag("Player"))
+        {
+            GameObject hit = Instantiate(impact, transform.position, Quaternion.identity);
+            Destroy(hit, 1f);
+            Destroy(gameObject);
+        }
     }
 }

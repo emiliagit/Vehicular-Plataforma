@@ -542,6 +542,7 @@ GameObject:
   - component: {fileID: 2287702552134552294}
   - component: {fileID: 5091867474904824692}
   - component: {fileID: -4128439576967272168}
+  - component: {fileID: 2126634569184019909}
   m_Layer: 0
   m_Name: TankFree_Blue
   m_TagString: Enemy
@@ -569,6 +570,7 @@ Transform:
   - {fileID: 8274742653386025668}
   - {fileID: 5248806453243938261}
   - {fileID: 5385296520827146888}
+  - {fileID: 6849921350112706725}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2783065901884621572
@@ -723,6 +725,21 @@ MonoBehaviour:
   damageEfectPoint1: {fileID: 5248806453243938261}
   damageEfectPoint2: {fileID: 5385296520827146888}
   deathEffect: {fileID: 8194992990867289339, guid: 99bc28c0d45f51c4fbac01080b73edc7, type: 3}
+--- !u!114 &2126634569184019909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6281262352993034486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d476607099467642bb7f6cb28070cae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bombPrefab: {fileID: 4784524351870049597, guid: 43447b79ca498df4fbd69ba262fbad85, type: 3}
+  spawnPoint: {fileID: 6849921350112706725}
+  spawnInterval: 15
 --- !u!1 &7480299040842963114
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,3 +823,34 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &9145857458573241162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6849921350112706725}
+  m_Layer: 0
+  m_Name: BombFirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6849921350112706725
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9145857458573241162}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.397, z: -1.336}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5200009900654678498}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

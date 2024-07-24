@@ -66,11 +66,12 @@ public class BossHEalth : MonoBehaviour
     private void DamageBoss()
     {
         FireEfect1 = Instantiate(damageEfectEnemies, damageEfectPoint1.position, damageEfectPoint1.rotation);
-
+        FireEfect1.transform.SetParent(transform);
     }
 
     private void DamageBoss2()
     {
         FireEfect2 = Instantiate(damageEfectEnemies, damageEfectPoint2.position, damageEfectPoint2.rotation);
+        FireEfect2.transform.SetParent(transform);
     }
 }
