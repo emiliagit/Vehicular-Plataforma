@@ -18,6 +18,12 @@ public class GameManager : MonoBehaviour
 
     public void PlayButton()
     {
+        SceneManager.LoadScene("Tutorial");
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void Continuar()
+    {
         SceneManager.LoadScene("GameScene");
     }
 
