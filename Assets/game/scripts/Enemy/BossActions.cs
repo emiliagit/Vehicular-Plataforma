@@ -17,7 +17,6 @@ public class BossActions : MonoBehaviour
         Idle,
         Chasing,
 
-
     }
 
     private void Update()

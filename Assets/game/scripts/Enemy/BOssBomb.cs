@@ -4,24 +4,48 @@ using UnityEngine;
 
 public class BOssBomb : MonoBehaviour
 {
-    // Prefab de la bomba
     public GameObject bombPrefab;
-
-    // Punto de generación de la bomba
     public Transform spawnPoint;
-
-    // Tiempo entre cada generación de bomba
     public float spawnInterval = 3.0f;
 
-    // Inicializa el generador de bombas
+    public float detectionRadius = 6f;
+
+    public Transform player;
+
+    private bool isSpawning = false;
+    private Coroutine spawnCoroutine;
+
+
     void Start()
     {
-        StartCoroutine(SpawnBombs());
+        
     }
 
-    // Corrutina para generar bombas cada cierto tiempo
-    IEnumerator SpawnBombs()
+    private void Update()
     {
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+        if (distanceToPlayer <= detectionRadius)
+        {
+            if (!isSpawning)
+            {
+                spawnCoroutine = StartCoroutine(SpawnBombs());
+            }
+        }
+        else
+        {
+            if (isSpawning)
+            {
+                StopCoroutine(spawnCoroutine);
+                isSpawning = false;
+            }
+        }
+    }
+
+
+    public IEnumerator SpawnBombs()
+    {
+        isSpawning = true;
         while (true)
         {
             yield return new WaitForSeconds(spawnInterval);
@@ -29,9 +53,12 @@ public class BOssBomb : MonoBehaviour
         }
     }
 
-    // Método para generar una bomba
-    void SpawnBomb()
+
+    public void SpawnBomb()
     {
         Instantiate(bombPrefab, spawnPoint.position, spawnPoint.rotation);
     }
+
+
+
 }
